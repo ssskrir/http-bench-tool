@@ -4,7 +4,6 @@ import time
 import sys
 
 def run_bench(hosts, count):
-    # Разделяем строку хостов в список
     host_list = hosts.split(',')
     
     for host in host_list:
@@ -21,11 +20,11 @@ def run_bench(hosts, count):
         for i in range(count):
             try:
                 start_time = time.perf_counter()
-                # Устанавливаем таймаут, чтобы программа не зависала вечно
+                
                 response = requests.get(host, timeout=10)
                 end_time = time.perf_counter()
                 
-                duration = (end_time - start_time) * 1000  # Переводим в мс
+                duration = (end_time - start_time) * 1000  
                 stats['times'].append(duration)
 
                 if 200 <= response.status_code < 400:
@@ -35,10 +34,7 @@ def run_bench(hosts, count):
                     
             except requests.exceptions.RequestException as e:
                 stats['errors'] += 1
-                # Опционально: вывод конкретной ошибки для отладки
-                # print(f"  Request {i+1}: Error ({type(e).__name__})")
-
-        # Вывод статистики
+            
         display_stats(host, stats)
 
 def display_stats(host, stats):
