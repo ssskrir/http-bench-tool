@@ -18,15 +18,15 @@
    Выполните команду: python bench.py -H [https://ya.ru](https://ya.ru),[https://google.com](https://google.com) -C 5
 
 4. **Пример работы**:
-   --- Testing host: [https://ya.ru](https://ya.ru) (5 requests) ---
-Host:      [https://ya.ru](https://ya.ru)
-Success:   5
-Failed:    0
-Errors:    0
-Min:       42.15ms
-Max:       55.40ms
-Avg:       48.22ms
-------------------------------
+    --- Testing host: [https://ya.ru](https://ya.ru) (5 requests) ---
+    Host:      [https://ya.ru](https://ya.ru)
+    Success:   5
+    Failed:    0
+    Errors:    0
+    Min:       42.15ms
+    Max:       55.40ms
+    Avg:       48.22ms
+    ------------------------------
 
 ## Описание вывода
 * **Success**: Количество успешных ответов (HTTP 2xx-3xx).
